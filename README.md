@@ -1,6 +1,6 @@
-# Disease Classification ML Comparison
+# MediCompare AI 🧠🩺
 
-This project demonstrates the application of various machine learning algorithms to classify different diseases, including diabetes, brain stroke, and heart disease. It compares algorithm performances to provide insights into which models are most effective for different medical conditions.
+Interactive platform to compare machine learning models across various disease datasets.
 
 ## Project Structure
 
@@ -10,9 +10,10 @@ This project demonstrates the application of various machine learning algorithms
 │   ├── data/           # Dataset storage
 │   ├── models/         # ML model implementations
 │   └── app.py          # Flask API server
-└── frontend/
-    ├── public/         # Static files
-    └── src/            # React source code
+├── frontend/
+│   ├── public/         # Static files
+│   └── src/            # React source code
+└── streamlit_app.py    # Streamlit application
 ```
 
 ## Features
@@ -25,10 +26,26 @@ This project demonstrates the application of various machine learning algorithms
   - Neural Network
 - Interactive visualization of model performance metrics
 - RESTful API for model training and evaluation
+- Streamlit web application for easy model comparison
 
 ## Setup Instructions
 
-### Backend Setup
+### Option 1: Streamlit App (Recommended)
+
+1. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+2. Run the Streamlit app:
+   ```
+   streamlit run streamlit_app.py
+   ```
+   The app will open in your browser at http://localhost:8501
+
+### Option 2: Backend and Frontend Setup
+
+#### Backend Setup
 
 1. Navigate to the backend directory:
    ```
@@ -53,7 +70,7 @@ This project demonstrates the application of various machine learning algorithms
    ```
    The server will start on http://localhost:5000
 
-### Frontend Setup
+#### Frontend Setup
 
 1. Navigate to the frontend directory:
    ```
@@ -73,6 +90,16 @@ This project demonstrates the application of various machine learning algorithms
 
 ## Usage
 
+### Streamlit App
+
+1. Select a disease dataset from the sidebar
+2. Choose the machine learning algorithms to compare
+3. Adjust test size and random state parameters if needed
+4. Click "Train and Compare Models" to start the analysis
+5. View the results in the metrics table and visualizations
+
+### React Frontend
+
 1. Select one or more diseases to analyze
 2. Choose the machine learning algorithms to compare
 3. Click "Train & Compare" to start the analysis
@@ -83,4 +110,12 @@ This project demonstrates the application of various machine learning algorithms
 - `GET /api/diseases` - List available diseases
 - `GET /api/algorithms` - List available algorithms
 - `POST /api/train` - Train models on a single disease
-- `POST /api/compare` - Compare models across multiple diseases 
+- `POST /api/compare` - Compare models across multiple diseases
+
+## Deployment
+
+The Streamlit app can be deployed on Streamlit Cloud or any other platform that supports Python applications.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details. 
